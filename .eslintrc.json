@@ -23,8 +23,7 @@
             {
                 "endOfLine": "auto",
                 "tabWidth": 4,
-                "singleQuote": true,
-                "trailingComma": "all"
+                "singleQuote": true
             }
         ]
     }
