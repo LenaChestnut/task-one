@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -16,18 +15,7 @@ module.exports = merge(common, {
         publicPath: '',
     },
     optimization: {
-        minimizer: [
-            new CssMinimizerWebpackPlugin(),
-            new TerserPlugin(),
-            new HtmlWebpackPlugin({
-                template: './src/index.pug',
-                minify: {
-                    removeAttributeQuotes: true,
-                    collapseWhitespace: true,
-                    removeComments: true,
-                },
-            }),
-        ],
+        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
     },
     plugins: [
         new CleanWebpackPlugin(),

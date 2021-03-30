@@ -1,4 +1,11 @@
+const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const getPages = require('fs-readdir-recursive');
+
+const pages = getPages(path.resolve(__dirname, 'src')).filter((filename) =>
+    filename.endsWith('.pug')
+);
 
 module.exports = {
     entry: './src/index.js',
@@ -14,7 +21,21 @@ module.exports = {
             },
         },
     },
-    plugins: [new ESLintPlugin()],
+    plugins: [
+        new ESLintPlugin(),
+        ...pages.map(
+            (page) =>
+                new HtmlWebpackPlugin({
+                    template: `./src/${page}`,
+                    filename: `${page.replace('.pug', '.html')}`,
+                    minify: {
+                        removeAttributeQuotes: true,
+                        collapseWhitespace: true,
+                        removeComments: true,
+                    },
+                })
+        ),
+    ],
     module: {
         rules: [
             {
