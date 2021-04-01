@@ -1,6 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const { common, getPages } = require('./webpack.common');
+
+const pages = getPages();
 
 module.exports = merge(common, {
     mode: 'development',
@@ -12,6 +15,15 @@ module.exports = merge(common, {
     devServer: {
         open: true,
     },
+    plugins: [
+        ...pages.map(
+            (page) =>
+                new HtmlWebpackPlugin({
+                    template: `./src/${page}.pug`,
+                    filename: `${page}.html`,
+                })
+        ),
+    ],
     module: {
         rules: [
             {

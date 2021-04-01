@@ -1,10 +1,13 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const common = require('./webpack.common');
+const { common, getPages } = require('./webpack.common');
+
+const pages = getPages();
 
 module.exports = merge(common, {
     mode: 'production',
@@ -22,6 +25,18 @@ module.exports = merge(common, {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
         }),
+        ...pages.map(
+            (page) =>
+                new HtmlWebpackPlugin({
+                    template: `./src/${page}.pug`,
+                    filename: `${page}.[contenthash].html`,
+                    minify: {
+                        removeAttributeQuotes: true,
+                        collapseWhitespace: true,
+                        removeComments: true,
+                    },
+                })
+        ),
     ],
     module: {
         rules: [

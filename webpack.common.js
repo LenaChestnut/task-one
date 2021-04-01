@@ -1,13 +1,16 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const getPages = require('fs-readdir-recursive');
+const readDir = require('fs-readdir-recursive');
 
-const pages = getPages(path.resolve(__dirname, 'src'))
-    .filter((filename) => filename.endsWith('.pug'))
-    .map((filename) => filename.replace(/\.pug/, ''));
+module.exports.getPages = function getPages() {
+    const pages = readDir(path.resolve(__dirname, 'src'))
+        .filter((filename) => filename.endsWith('.pug'))
+        .map((filename) => filename.replace(/\.pug/, ''));
 
-module.exports = {
+    return pages;
+};
+
+module.exports.common = {
     entry: './src/index.js',
     optimization: {
         splitChunks: {
@@ -21,21 +24,7 @@ module.exports = {
             },
         },
     },
-    plugins: [
-        new ESLintPlugin(),
-        ...pages.map(
-            (page) =>
-                new HtmlWebpackPlugin({
-                    template: `./src/${page}.pug`,
-                    filename: `${page}.html`,
-                    minify: {
-                        removeAttributeQuotes: true,
-                        collapseWhitespace: true,
-                        removeComments: true,
-                    },
-                })
-        ),
-    ],
+    plugins: [new ESLintPlugin()],
     module: {
         rules: [
             {
