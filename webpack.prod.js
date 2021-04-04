@@ -15,7 +15,6 @@ module.exports = merge(common, {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'build'),
-        publicPath: '',
     },
     optimization: {
         minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
@@ -29,7 +28,7 @@ module.exports = merge(common, {
             (page) =>
                 new HtmlWebpackPlugin({
                     template: `./src/${page}.pug`,
-                    filename: `${page}.[contenthash].html`,
+                    filename: `${page}.html`,
                     minify: {
                         removeAttributeQuotes: true,
                         collapseWhitespace: true,
