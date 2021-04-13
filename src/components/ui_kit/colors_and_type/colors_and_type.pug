@@ -1,8 +1,7 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Colors #{'&'} Type
-    body
-        include ../common/ui-kit-header/ui-kit-header.pug
+extends ../common/layout/layout.pug
+
+block title
+    title Colors #{'&'} Type
+
+block header
+    include ../common/ui-kit-header/ui-kit-header.pug
