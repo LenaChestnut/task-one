@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -7,6 +8,7 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { common, getPages } = require('./webpack.common');
 
+const ASSET_PATH = process.env.ASSET_PATH || 'auto';
 const pages = getPages();
 
 module.exports = merge(common, {
@@ -15,11 +17,15 @@ module.exports = merge(common, {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'build'),
+        publicPath: ASSET_PATH,
     },
     optimization: {
         minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
