@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://task-one/./src/components/ui-kit/common/layout/_layout.scss"],"names":[],"mappings":"AAAA,MACI,SACA,UAGJ,GACI","file":"main.de0387ce8e42986b5e93.css","sourcesContent":[".page {\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nh1 {\r\n    color: plum;\r\n}\r\n"],"sourceRoot":""}
