@@ -17,7 +17,8 @@ module.exports = merge(common, {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'build'),
-        publicPath: ASSET_PATH,
+        // publicPath: ASSET_PATH,
+        publicPath: 'auto',
     },
     optimization: {
         minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
