@@ -1,7 +1,10 @@
-extends ../common/layout/layout.pug
+extends ../common/page/page.pug
 
 block title
     title Colors #{'&'} Type
 
-block header
-    include ../common/ui-kit-header/ui-kit-header.pug
+block body
+    body(class="page page_unresponsive")
+
+    block header
+        include ../common/ui-kit-header/ui-kit-header.pug
