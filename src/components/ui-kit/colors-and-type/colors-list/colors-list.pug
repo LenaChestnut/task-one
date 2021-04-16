@@ -1,0 +1,11 @@
+mixin colorsListItem(item)
+    li.colors-list__item
+        .colors-list__sample
+        p.colors-list__name= item.colorName
+        p.colors-list__code= item.colorCode
+
+- const colorsList = [{colorName: 'Dark Shade 100%', colorCode: '#1F2041'}];
+
+ul.list.colors-list
+    each item in colorsList
+        +colorsListItem(item)

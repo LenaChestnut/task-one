@@ -4,7 +4,11 @@ block title
     title Colors #{'&'} Type
 
 block body
-    body(class="page page_unresponsive")
+    body.page.page_unresponsive
 
     block header
         include ../common/ui-kit-header/ui-kit-header.pug
+
+    block content
+        //- include ./colors-list/colors-list.pug
+        include ./type-list/type-list.pug
