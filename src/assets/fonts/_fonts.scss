@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'),
+        url('./montserrat/regular/Montserrat-Regular.woff') format('woff'),
+        url('./montserrat/regular/Montserrat-Regular.ttf') format('truetype'),
+        url('./montserrat/regular/Montserrat-Regular.svg#Montserrat')
+            format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'),
+        url('./montserrat/bold/Montserrat-Bold.woff') format('woff'),
+        url('./montserrat/bold/Montserrat-Bold.ttf') format('truetype'),
+        url('./montserrat/bold/Montserrat-Bold.svg#Montserrat') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
