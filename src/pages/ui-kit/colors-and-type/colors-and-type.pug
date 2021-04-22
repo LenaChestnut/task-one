@@ -1,4 +1,4 @@
-extends ../common/page/page.pug
+extends ../../../components/layout/layout
 
 block title
     title Colors #{'&'} Type
@@ -7,8 +7,8 @@ block body
     body.page.page_unresponsive
 
     block header
-        include ../common/ui-kit-header/ui-kit-header.pug
+        include ../../../components/header/ui-kit-header
 
     block content
         //- include ./colors-list/colors-list.pug
-        include ./type-table/type-table.pug
+        //- include ./type-table/type-table.pug
