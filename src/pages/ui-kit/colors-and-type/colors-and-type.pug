@@ -1,5 +1,7 @@
 extends ../../../components/layout/layout
 
+include ../../../components/header/header
+
 block title
     title Colors #{'&'} Type
 
@@ -7,7 +9,7 @@ block body
     body.page.page_unresponsive
 
     block header
-        include ../../../components/header/ui-kit-header
+        +header(require('./../../../components/header/img/header__logo_transparent.svg'))
 
     block content
         //- include ./colors-list/colors-list.pug
