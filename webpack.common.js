@@ -41,13 +41,15 @@ module.exports.common = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                exclude: [path.resolve(__dirname, 'src/abstracts/fonts')],
                 generator: {
                     filename: 'images/[name][ext]',
                 },
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
                 type: 'asset/resource',
+                include: [path.resolve(__dirname, 'src/abstracts/fonts')],
                 generator: {
                     filename: 'fonts/[name][ext]',
                 },
