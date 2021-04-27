@@ -6,11 +6,12 @@ block title
     title Colors #{'&'} Type
 
 block body
-    body.page.page_unresponsive
+    body.layout.layout_unresponsive
 
     block header
         +header(require('./../../../components/header/img/header__logo_transparent.svg'))
 
     block content
-        //- include ./colors-list/colors-list.pug
-        //- include ./type-table/type-table.pug
+        main.content.colors-and-types
+            //- include ./colors-list/colors-list.pug
+            include ../../../components/type-table/type-table
