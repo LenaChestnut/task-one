@@ -1,6 +1,7 @@
 extends ../../../components/layout/layout
 
 include ../../../components/header/header
+include ../../../components/type-table/type-table
 
 block title
     title Colors #{'&'} Type
@@ -13,5 +14,5 @@ block body
 
     block content
         main.content.colors-and-types
-            //- include ./colors-list/colors-list.pug
-            include ../../../components/type-table/type-table
+            include ../../../components/colors-list/colors-list
+            +type-table()(class='colors-and-types__table')

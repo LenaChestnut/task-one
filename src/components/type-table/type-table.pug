@@ -17,9 +17,10 @@ mixin type-table__row(marker, text)
                     p(class=`${attributes.class} type-table__${attributes.class}`)
                         != text
 
-table.type-table
-    tbody.type-table__body
-        +type-table__row('H1', 'This one is the sub-section or widget title')(class='widget-title')
-        +type-table__row('H2', 'Next one is the item title inside widgets')(class='item-title')
-        +type-table__row('H3', 'This is a label or CTA text')(class='label-text')
-        +type-table__row('Body', `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)(class='text')
+mixin type-table()
+    table.type-table&attributes(attributes)
+        tbody.type-table__body
+            +type-table__row('H1', 'This one is the sub-section or widget title')(class='widget-title')
+            +type-table__row('H2', 'Next one is the item title inside widgets')(class='item-title')
+            +type-table__row('H3', 'This is a label or CTA text')(class='label-text')
+            +type-table__row('Body', `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)(class='text')
