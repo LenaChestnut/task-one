@@ -1,0 +1,26 @@
+.colors-list-item {
+    position: relative;
+    height: 70px;
+
+    &__info {
+        padding-top: 10px;
+    }
+
+    &__name {
+        margin-bottom: 4px;
+    }
+
+    &__color-code {
+        text-transform: uppercase;
+    }
+}
+
+.colors-list-item::before {
+    content: '';
+    position: absolute;
+    left: -110px;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background-color: currentColor;
+}

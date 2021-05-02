@@ -1,11 +1,7 @@
-mixin colorsListItem(item)
-    li.colors-list__item
-        .colors-list__sample
-        p.colors-list__name= item.colorName
-        p.colors-list__code= item.colorCode
+include colors-list-item/colors-list-item
 
-- const colorsList = [{colorName: 'Dark Shade 100%', colorCode: '#1F2041'}];
-
-ul.list.colors-list
-    each item in colorsList
-        +colorsListItem(item)
+mixin colors-list()
+    - const colorsList = require('components/colors-list/colors-list-data.json');
+    ul.colors-list
+        each item in colorsList
+            +colorsListItem(item)(class='colors-list__item')

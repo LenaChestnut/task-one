@@ -1,6 +1,7 @@
 extends ../../../components/layout/layout
 
 include ../../../components/header/header
+include ../../../components/colors-list/colors-list
 include ../../../components/type-table/type-table
 
 block title
@@ -10,9 +11,10 @@ block body
     body.layout.layout_unresponsive
 
     block header
-        +header(require('./../../../components/header/img/header__logo_transparent.svg'))
+        +header()
 
     block content
         main.content.colors-and-types
-            include ../../../components/colors-list/colors-list
-            +type-table()(class='colors-and-types__table')
+            
+            +colors-list()
+            +type-table()(class='colors-and-types__type-table')

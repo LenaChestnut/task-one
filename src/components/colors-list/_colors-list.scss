@@ -1,6 +1,5 @@
-.colors-list__sample {
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
-    background-color: black;
+.colors-list {
+    &__item {
+        margin-bottom: 20px;
+    }
 }
