@@ -1,11 +1,12 @@
 @use './fonts/fonts';
-@use './colors/colors';
+@use './colors//colors';
 
 html,
 body {
     box-sizing: border-box;
     height: 100%;
     font-family: fonts.$main-font;
+    color: colors.$text-color;
 }
 
 h1,
