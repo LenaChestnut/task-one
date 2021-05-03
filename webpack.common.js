@@ -59,6 +59,7 @@ module.exports.common = {
     resolve: {
         alias: {
             components: path.resolve(__dirname, 'src/components/'),
+            abstracts: path.resolve(__dirname, 'src/abstracts'),
         },
     },
 };
