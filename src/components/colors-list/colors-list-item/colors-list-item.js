@@ -1,1 +1,1 @@
-import './_colors-list-item.scss';
+import './colors-list-item.scss';

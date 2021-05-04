@@ -1,1 +1,1 @@
-import './_ui-kit.scss';
+import './ui-kit.scss';

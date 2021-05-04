@@ -1,1 +1,1 @@
-import './_type-table.scss';
+import './type-table.scss';
