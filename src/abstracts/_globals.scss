@@ -5,8 +5,10 @@ html,
 body {
   box-sizing: border-box;
   height: 100%;
-  font-family: fonts.$main-font;
+  font-family: fonts.$main-font, Arial, sans-serif;
+  font-size: 14px;
   color: colors.$dark-100;
+  background-color: #fff;
 }
 
 h1,
