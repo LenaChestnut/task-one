@@ -1,7 +1,7 @@
 include colors-list-item/colors-list-item
 
 mixin colors-list()
-    - const colorsList = require('components/colors-list/colors-list-data.json');
+    - const colorsList = require("components/colors-list/colors-list-data.json");
     ul.colors-list
         each item in colorsList
-            +colorsListItem(item)(class='colors-list__item')
+            +colorsListItem(item)(class="colors-list__item")

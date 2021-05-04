@@ -4,23 +4,23 @@ mixin type-table__row(marker, text)
             p(class=attributes.class)= marker
         td.type-table__example
             case marker
-                when 'H1'
+                when "H1"
                     h1(class=`${attributes.class} type-table__${attributes.class}`)
                         = text
-                when 'H2'
+                when "H2"
                     h2(class=`${attributes.class} type-table__${attributes.class}`)
                         = text
-                when 'H3'
+                when "H3"
                     h3(class=`${attributes.class} type-table__${attributes.class}`)
                         = text
-                when 'Body'
+                when "Body"
                     p(class=`${attributes.class} type-table__${attributes.class}`)
                         != text
 
 mixin type-table()
     table.type-table&attributes(attributes)
         tbody.type-table__body
-            +type-table__row('H1', 'This one is the sub-section or widget title')(class='widget-title')
-            +type-table__row('H2', 'Next one is the item title inside widgets')(class='item-title')
-            +type-table__row('H3', 'This is a label or CTA text')(class='label-text')
-            +type-table__row('Body', `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)(class='text')
+            +type-table__row("H1", "This one is the sub-section or widget title")(class="widget-title")
+            +type-table__row("H2", "Next one is the item title inside widgets")(class="item-title")
+            +type-table__row("H3", "This is a label or CTA text")(class="label-text")
+            +type-table__row("Body", `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)(class="text")
