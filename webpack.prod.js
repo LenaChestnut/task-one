@@ -12,53 +12,53 @@ const ASSET_PATH = process.env.ASSET_PATH || 'auto';
 const pages = getPages();
 
 module.exports = merge(common, {
-    mode: 'production',
-    devtool: 'source-map',
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'build'),
-        publicPath: ASSET_PATH,
-    },
-    optimization: {
-        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
-        }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-        }),
-        ...pages.map(
-            (page) =>
-                new HtmlWebpackPlugin({
-                    template: `./src/${page}.pug`,
-                    filename: `${page}.html`,
-                    minify: {
-                        removeAttributeQuotes: true,
-                        collapseWhitespace: true,
-                        removeComments: true,
-                    },
-                })
-        ),
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.(s*)css$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'resolve-url-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
+  mode: 'production',
+  devtool: 'source-map',
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: ASSET_PATH,
+  },
+  optimization: {
+    minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+    }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          template: `./src/${page}.pug`,
+          filename: `${page}.html`,
+          minify: {
+            removeAttributeQuotes: true,
+            collapseWhitespace: true,
+            removeComments: true,
+          },
+        })
+    ),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(s*)css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
             },
+          },
         ],
-    },
+      },
+    ],
+  },
 });

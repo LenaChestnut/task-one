@@ -3,10 +3,10 @@
 
 html,
 body {
-    box-sizing: border-box;
-    height: 100%;
-    font-family: fonts.$main-font;
-    color: colors.$dark-100;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: fonts.$main-font;
+  color: colors.$dark-100;
 }
 
 h1,
@@ -15,10 +15,10 @@ h3,
 p,
 ul,
 ol {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }

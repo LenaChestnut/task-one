@@ -1,22 +1,21 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'),
-        url('./montserrat/regular/Montserrat-Regular.woff') format('woff'),
-        url('./montserrat/regular/Montserrat-Regular.ttf') format('truetype'),
-        url('./montserrat/regular/Montserrat-Regular.svg#Montserrat')
-            format('svg');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Montserrat';
+  src: local('montserrat'),
+    url('./montserrat/regular/montserrat-regular.woff') format('woff'),
+    url('./montserrat/regular/montserrat-regular.ttf') format('truetype'),
+    url('./montserrat/regular/montserrat-regular.svg#montserrat') format('svg');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'),
-        url('./montserrat/bold/Montserrat-Bold.woff') format('woff'),
-        url('./montserrat/bold/Montserrat-Bold.ttf') format('truetype'),
-        url('./montserrat/bold/Montserrat-Bold.svg#Montserrat') format('svg');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Montserrat';
+  src: local('montserrat'),
+    url('./montserrat/bold/montserrat-bold.woff') format('woff'),
+    url('./montserrat/bold/montserrat-bold.ttf') format('truetype'),
+    url('./montserrat/bold/montserrat-bold.svg#montserrat') format('svg');
+  font-weight: 700;
+  font-style: normal;
 }
 
 $main-font: Montserrat;

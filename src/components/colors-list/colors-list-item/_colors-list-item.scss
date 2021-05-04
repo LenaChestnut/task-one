@@ -1,58 +1,58 @@
 @use 'abstracts/colors/colors' as *;
 
 .colors-list-item {
-    position: relative;
+  position: relative;
+  height: 70px;
+
+  &__info {
+    padding-top: 10px;
+  }
+
+  &__name {
+    margin-bottom: 4px;
+  }
+
+  &__color-code {
+    text-transform: uppercase;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -110px;
+    width: 70px;
     height: 70px;
+    border-radius: 6px;
+    background-color: currentColor;
+  }
 
-    &__info {
-        padding-top: 10px;
+  &_dark {
+    &_100::before {
+      background-color: $dark-100;
     }
 
-    &__name {
-        margin-bottom: 4px;
+    &_75::before {
+      background-color: $dark-75;
     }
 
-    &__color-code {
-        text-transform: uppercase;
+    &_50::before {
+      background-color: $dark-50;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        left: -110px;
-        width: 70px;
-        height: 70px;
-        border-radius: 6px;
-        background-color: currentColor;
+    &_25::before {
+      background-color: $dark-25;
     }
 
-    &_dark {
-        &_100::before {
-            background-color: $dark-100;
-        }
-
-        &_75::before {
-            background-color: $dark-75;
-        }
-
-        &_50::before {
-            background-color: $dark-50;
-        }
-
-        &_25::before {
-            background-color: $dark-25;
-        }
-
-        &_5::before {
-            background-color: $dark-5;
-        }
+    &_5::before {
+      background-color: $dark-5;
     }
+  }
 
-    &_purple::before {
-        background-color: $primary-accent;
-    }
+  &_purple::before {
+    background-color: $primary-accent;
+  }
 
-    &_green::before {
-        background-color: $secondary-accent;
-    }
+  &_green::before {
+    background-color: $secondary-accent;
+  }
 }

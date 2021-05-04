@@ -1,48 +1,48 @@
 .widget-title {
-    font-size: 24px;
-    line-height: 29px;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 .item-title {
-    font-size: 19px;
-    line-height: 24px;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 .label-text {
-    font-size: 12px;
-    text-transform: uppercase;
-    line-height: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 15px;
 }
 
 .text {
-    font-size: 14px;
-    line-height: 24px;
-    opacity: 0.75;
+  font-size: 14px;
+  line-height: 24px;
+  opacity: 0.75;
 }
 
 .type-table {
-    width: 440px;
-    border-collapse: collapse;
+  width: 440px;
+  border-collapse: collapse;
 
-    &__body {
-        vertical-align: top;
-    }
+  &__body {
+    vertical-align: top;
+  }
 
-    &__marker {
-        text-align: right;
-        padding-right: 29px;
-        opacity: 0.25;
-    }
+  &__marker {
+    text-align: right;
+    padding-right: 29px;
+    opacity: 0.25;
+  }
 
-    &__widget-title {
-        margin-bottom: 50px;
-    }
+  &__widget-title {
+    margin-bottom: 50px;
+  }
 
-    &__item-title {
-        margin-bottom: 48px;
-    }
+  &__item-title {
+    margin-bottom: 48px;
+  }
 
-    &__label-text {
-        margin-bottom: 45px;
-    }
+  &__label-text {
+    margin-bottom: 45px;
+  }
 }

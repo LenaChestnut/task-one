@@ -6,41 +6,41 @@ const { common, getPages } = require('./webpack.common');
 const pages = getPages();
 
 module.exports = merge(common, {
-    mode: 'development',
-    devtool: 'eval-cheap-source-map',
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    devServer: {
-        open: true,
-    },
-    plugins: [
-        ...pages.map(
-            (page) =>
-                new HtmlWebpackPlugin({
-                    template: `./src/${page}.pug`,
-                    filename: `${page}.html`,
-                })
-        ),
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.(s*)css$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'resolve-url-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
+  mode: 'development',
+  devtool: 'eval-cheap-source-map',
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    open: true,
+  },
+  plugins: [
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          template: `./src/${page}.pug`,
+          filename: `${page}.html`,
+        })
+    ),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(s*)css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
             },
+          },
         ],
-    },
-    target: 'web',
+      },
+    ],
+  },
+  target: 'web',
 });

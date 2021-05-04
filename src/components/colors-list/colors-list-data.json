@@ -1,25 +1,25 @@
 [
-    {
-        "colorName": "Dark Shade 100%",
-        "colorCode": "#1f2041",
-        "class": "dark_100"
-    },
-    {
-        "colorName": "Dark Shade 75%",
-        "colorCode": "#1f2041",
-        "class": "dark_75"
-    },
-    {
-        "colorName": "Dark Shade 50%",
-        "colorCode": "#1f2041",
-        "class": "dark_50"
-    },
-    {
-        "colorName": "Dark Shade 25%",
-        "colorCode": "#1f2041",
-        "class": "dark_25"
-    },
-    { "colorName": "Dark Shade 5%", "colorCode": "#1f2041", "class": "dark_5" },
-    { "colorName": "Purple", "colorCode": "#bc9cff", "class": "purple" },
-    { "colorName": "Green", "colorCode": "#6fcf97", "class": "green" }
+  {
+    "colorName": "Dark Shade 100%",
+    "colorCode": "#1f2041",
+    "class": "dark_100"
+  },
+  {
+    "colorName": "Dark Shade 75%",
+    "colorCode": "#1f2041",
+    "class": "dark_75"
+  },
+  {
+    "colorName": "Dark Shade 50%",
+    "colorCode": "#1f2041",
+    "class": "dark_50"
+  },
+  {
+    "colorName": "Dark Shade 25%",
+    "colorCode": "#1f2041",
+    "class": "dark_25"
+  },
+  { "colorName": "Dark Shade 5%", "colorCode": "#1f2041", "class": "dark_5" },
+  { "colorName": "Purple", "colorCode": "#bc9cff", "class": "purple" },
+  { "colorName": "Green", "colorCode": "#6fcf97", "class": "green" }
 ]

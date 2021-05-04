@@ -5,15 +5,15 @@ include ../../../components/colors-list/colors-list
 include ../../../components/type-table/type-table
 
 block title
-    title Colors #{'&'} Type
+  title Colors #{'&'} Type
 
 block body
-    body.layout.layout_unresponsive
+  body.layout.layout_unresponsive
 
-    block header
-        +header()
+  block header
+    +header()
 
-    block content
-        main.content.colors-and-types
-            +colors-list()
-            +type-table()(class="colors-and-types__type-table")
+  block content
+    main.content.colors-and-types
+      +colors-list()
+      +type-table()(class="colors-and-types__type-table")
