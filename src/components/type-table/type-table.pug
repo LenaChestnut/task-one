@@ -1,26 +1,35 @@
 mixin type-table__row(marker, text)
 	tr.type-table__row
-		td.type-table__marker 
-			p(class=attributes.class)= marker
-		td.type-table__example
-			case marker
-				when "H1"
-					h1(class=`${attributes.class} type-table__${attributes.class}`)
+		case marker
+			when "H1"
+				td.type-table__marker-info
+					h1.type-table__marker= marker
+				td.type-table__example
+					h1.type-table__widget-title
 						= text
-				when "H2"
-					h2(class=`${attributes.class} type-table__${attributes.class}`)
+			when "H2"
+				td.type-table__marker-info
+					h2.type-table__marker= marker
+				td.type-table__example
+					h2.type-table__item-title
 						= text
-				when "H3"
-					h3(class=`${attributes.class} type-table__${attributes.class}`)
+			when "H3"
+				td.type-table__marker-info
+					h3.type-table__marker= marker
+				td.type-table__example
+					h3.type-table__label-text
 						= text
-				when "Body"
-					p(class=`${attributes.class} type-table__${attributes.class}`)
+			when "Body"
+				td.type-table__marker-info
+					p.type-table__marker= marker
+				td.type-table__example
+					p.type-table__widget-title
 						!= text
 
 mixin type-table()
-	table.type-table&attributes(attributes)
+	table.type-table
 		tbody.type-table__body
-			+type-table__row("H1", "This one is the sub-section or widget title")(class="widget-title")
-			+type-table__row("H2", "Next one is the item title inside widgets")(class="item-title")
-			+type-table__row("H3", "This is a label or CTA text")(class="label-text")
-			+type-table__row("Body", `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)(class="text")
+			+type-table__row("H1", "This one is the sub-section or widget title")
+			+type-table__row("H2", "Next one is the item title inside widgets")
+			+type-table__row("H3", "This is a label or CTA text")
+			+type-table__row("Body", `This is the body text which is used for most </br>of the design, like paragraphs, lists, etc.`)

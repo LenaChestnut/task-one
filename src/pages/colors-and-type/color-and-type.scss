@@ -1,9 +1,12 @@
-.colors-and-types {
+.content__colors-and-types {
   padding: 33px 0 145px 260px;
   display: flex;
+}
 
-  &__type-table {
-    margin-top: -1px;
-    margin-left: 414px;
-  }
+.content__colors-list {
+  margin-top: 1px;
+}
+
+.content__type-table {
+  margin-left: 414px;
 }

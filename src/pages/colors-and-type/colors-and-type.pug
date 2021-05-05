@@ -14,6 +14,9 @@ block body
     +header()
 
   block content
-    main.content.colors-and-types
-      +colors-list()
-      +type-table()(class="colors-and-types__type-table")
+    main.content
+      .content__colors-and-types
+        .content__colors-list
+          +colors-list()
+        .content__type-table
+          +type-table()

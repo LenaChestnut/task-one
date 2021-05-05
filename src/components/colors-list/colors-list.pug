@@ -1,11 +1,11 @@
 mixin colorsListItem(item)
-  li(class=`colors-list__item_${item.class}`)&attributes(attributes)
+  li.colors-list__item(class=`colors-list__item_${item.class}`)
     .colors-list__info
-      h2.colors-list__name.item-title= item.colorName
-      p.colors-list__color-code.item-title= item.colorCode
+      h2.colors-list__name= item.colorName
+      p.colors-list__color-code= item.colorCode
 
 mixin colors-list()
   - const colorsList = require("components/colors-list/colors-list-data.json");
   ul.colors-list
     each item in colorsList
-      +colorsListItem(item)(class="colors-list__item")
+      +colorsListItem(item)
