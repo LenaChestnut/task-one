@@ -1,4 +1,8 @@
-include colors-list-item/colors-list-item
+mixin colorsListItem(item)
+  li(class=`colors-list__item_${item.class}`)&attributes(attributes)
+    .colors-list__info
+      h2.colors-list__name.item-title= item.colorName
+      p.colors-list__color-code.item-title= item.colorCode
 
 mixin colors-list()
   - const colorsList = require("components/colors-list/colors-list-data.json");
