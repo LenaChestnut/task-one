@@ -1,0 +1,43 @@
+@use 'abstracts/colors/colors' as *;
+
+.input {
+  &__field-label {
+    margin-bottom: 5px;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $dark-25;
+    padding: 13px 1rem;
+    transition: border 0.1s;
+
+    &::placeholder {
+      color: $dark-25;
+      transition: color 0.1s;
+    }
+
+    &:hover,
+    &:focus,
+    &_state_hover {
+      border: 1px solid $dark-50;
+      outline: none;
+
+      &::placeholder {
+        color: $dark-75;
+      }
+    }
+
+    &_size_large {
+      width: 320px;
+    }
+
+    &_size_medium {
+      width: 266px;
+    }
+
+    &_size_small {
+      width: 150px;
+    }
+  }
+}

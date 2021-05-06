@@ -1,6 +1,7 @@
 extends ../../components/layout/layout
 
 include ../../components/header/header
+include ../../components/input/input
 
 block title
   title Form Elements
@@ -12,4 +13,7 @@ block body
     +header()
 
   block content
-    main.content.form-elements
+    main.content
+      .content__form-elements
+        .content__top-group
+          +input({label: "Text field", type: "email", placeholder: "Email"})

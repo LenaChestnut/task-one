@@ -1,0 +1,16 @@
+mixin input(options)
+  if !options
+    - options = {}
+
+  - if (options.type === "text" || options.type === "email")
+    .input
+      label.input__label
+        .input__field-label
+          h3.input__label-text= options.label
+        input.input__field.input__field_size_large(
+          type = options.type
+          placeholder = options.placeholder
+          name = options.name
+          required = options.required
+          tabindex = options.tabindex
+        )
