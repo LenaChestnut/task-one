@@ -1,14 +1,33 @@
 @use 'abstracts/colors/colors' as *;
 
 .input {
+  &_size_large {
+    width: 320px;
+  }
+
+  &_size_medium {
+    width: 266px;
+  }
+
+  &_size_small {
+    width: 150px;
+  }
+
   &__field-label {
     margin-bottom: 5px;
   }
 
+  &__state {
+    float: right;
+    font-weight: 400;
+    color: $dark-50;
+  }
+
   &__field {
+    width: 100%;
     box-sizing: border-box;
-    border-radius: 4px;
     border: 1px solid $dark-25;
+    border-radius: 4px;
     padding: 13px 1rem;
     transition: border 0.1s;
 
@@ -27,17 +46,15 @@
         color: $dark-75;
       }
     }
+  }
 
-    &_size_large {
-      width: 320px;
-    }
-
-    &_size_medium {
-      width: 266px;
-    }
-
-    &_size_small {
-      width: 150px;
+  // DUPLICATION - REFACTOR
+  &__field_state_default:hover,
+  &__field_state_default:focus {
+    border: 1px solid $dark-25;
+    &::placeholder {
+      color: $dark-25;
+      transition: color 0.1s;
     }
   }
 }

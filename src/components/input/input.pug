@@ -2,15 +2,20 @@ mixin input(options)
   if !options
     - options = {}
 
-  - if (options.type === "text" || options.type === "email")
-    .input
+  if (options.type === "text" || options.type === "email")
+    .input.input_size_large
       label.input__label
         .input__field-label
           h3.input__label-text= options.label
-        input.input__field.input__field_size_large(
+            if options.state === 'default'
+              span.input__state Default
+            else if options.state === 'hover'
+              span.input__state Hover / focus
+        input.input__field(
           type = options.type
           placeholder = options.placeholder
           name = options.name
           required = options.required
           tabindex = options.tabindex
+          class = options.state ? `input__field_state_${options.state}` : ''
         )
