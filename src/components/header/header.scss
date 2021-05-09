@@ -1,3 +1,5 @@
+@use 'abstracts/variables' as *;
+
 .header__logo {
-  margin: 30px;
+  margin: rem(30);
 }

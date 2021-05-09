@@ -1,5 +1,7 @@
+@use 'abstracts/variables' as *;
+
 .type-table {
-  width: 440px;
+  width: rem(440);
   border-collapse: collapse;
 
   &__body {
@@ -7,7 +9,7 @@
   }
 
   &__marker-info {
-    padding-right: 29px;
+    padding-right: rem(29);
   }
 
   &__marker {
@@ -17,14 +19,14 @@
   }
 
   &__widget-title {
-    margin-bottom: 50px;
+    margin-bottom: rem(50);
   }
 
   &__item-title {
-    margin-bottom: 48px;
+    margin-bottom: rem(48);
   }
 
   &__label-text {
-    margin-bottom: 45px;
+    margin-bottom: rem(45);
   }
 }

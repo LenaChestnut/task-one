@@ -1,3 +1,4 @@
+@use './variables' as *;
 @use './fonts/fonts';
 @use './colors//colors';
 
@@ -6,7 +7,7 @@ body {
   box-sizing: border-box;
   height: 100%;
   font-family: fonts.$main-font, Arial, sans-serif;
-  font-size: 14px;
+  font-size: #{$font-size}px;
   color: colors.$dark-100;
   background-color: #fff;
 }
@@ -22,23 +23,23 @@ ol {
 }
 
 h1 {
-  font-size: 24px;
-  line-height: 29px;
+  font-size: rem(24);
+  line-height: rem(29);
 }
 
 h2 {
-  font-size: 19px;
-  line-height: 24px;
+  font-size: rem(19);
+  line-height: rem(24);
 }
 
 h3 {
-  font-size: 12px;
+  font-size: rem(12);
   text-transform: uppercase;
-  line-height: 15px;
+  line-height: rem(15);
 }
 
 p {
-  line-height: 24px;
+  line-height: rem(24);
   opacity: 0.75;
 }
 
