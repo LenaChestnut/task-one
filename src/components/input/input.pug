@@ -19,13 +19,3 @@ mixin input(options)
           tabindex = options.tabindex
           class = options.state ? `input__field_state_${options.state}` : ''
         )
-  else if (options.type === "select")
-    .input.input_size_large
-      label.input__label
-        .input__field-label
-          h3.input__label-text= options.label
-      select.input__field(
-          name = options.name
-          required = options.required
-          tabindex = options.tabindex
-      )

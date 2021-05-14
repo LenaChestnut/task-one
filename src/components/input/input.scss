@@ -45,6 +45,7 @@
     box-sizing: border-box;
     border-radius: rem(4);
     padding: rem(13) 1rem;
+    height: rem(44);
     transition: border 0.1s;
 
     @include field_default;
